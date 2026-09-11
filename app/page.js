@@ -1,26 +1,83 @@
 import Image from "next/image";
+import { ExternalLink } from "lucide-react";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen bg-white text-black flex flex-col items-center justify-center p-4 sm:p-8">
       <div className="max-w-2xl w-full">
-        <header className="text-center mb-12">
+        <header className="text-center mb-10 sm:mb-12">
           <div>
             <Image
               src="/images/alket-rexhepi.jpeg"
               alt="Alket Rexhepi"
               width={200}
               height={200}
+              priority
               className="rounded-full mx-auto mb-6 border-4 border-black"
             />
           </div>
-          <h1 className="text-5xl font-bold">Alket Rexhepi</h1>
-          <p className="text-xl mt-2">
+          <h1 className="text-4xl sm:text-5xl font-bold">Alket Rexhepi</h1>
+          <p className="text-lg sm:text-xl mt-2">
             Software Developer / Psychology student
           </p>
         </header>
 
         <main className="mb-12">
+          {/* Featured Game Section */}
+          <section className="mb-12">
+            <div className="border-2 border-black rounded-2xl p-5 sm:p-6 bg-neutral-50">
+              <div className="flex items-center justify-between gap-2 mb-3">
+                <span className="inline-block uppercase tracking-wider text-xs font-bold px-2.5 py-1 bg-black text-white rounded">
+                  Latest Game
+                </span>
+                <a
+                  href="https://pishp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-semibold text-neutral-600 hover:text-black hover:underline inline-flex items-center gap-1"
+                >
+                  pishp.com
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">
+                Check out <a href="https://pishp.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:opacity-80">Pishp</a>!
+              </h2>
+              <p className="text-base sm:text-lg text-neutral-700 mb-4 leading-relaxed">
+                I built <strong>Pishp</strong>, a multiplayer online card game. Play classic games like Pishpirik and Zhol directly in your browser with friends!
+              </p>
+
+              <a
+                href="https://pishp.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden rounded-xl border-2 border-black transition-transform duration-200 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-black"
+              >
+                <Image
+                  src="/images/pishp.webp"
+                  alt="Pishp - Play online card games"
+                  width={600}
+                  height={315}
+                  sizes="(max-width: 672px) 100vw, 600px"
+                  className="w-full h-auto block transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+              </a>
+
+              <div className="mt-5 flex justify-end">
+                <a
+                  href="https://pishp.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-neutral-800 transition-colors shadow-sm text-center"
+                >
+                  <span>Play Pishp Now</span>
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </section>
+
           <section className="mb-8">
             <h2 className="text-3xl font-semibold mb-4 border-b-2 border-black pb-2">
               About Me
